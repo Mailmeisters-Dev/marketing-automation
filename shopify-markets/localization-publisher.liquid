@@ -1,0 +1,23 @@
+<script>
+(function () {
+  // Prevent duplicate loading
+  if (window.__shopify_localization_state_loaded) return;
+  window.__shopify_localization_state_loaded = true;
+
+  // Push localization data to dataLayer
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    shopify: {
+      localization: {
+        language: {{ localization.language.iso_code | json }},
+        country: {{ localization.country.iso_code | json }},
+        currency: {{ cart.currency.iso_code | default: shop.currency | json }},
+        market_handle: {{ localization.market.handle | default: '' | json }},
+        market_id: {{ localization.market.id | default: '' | json }},
+        request_locale_iso_code: {{ request.locale.iso_code | json }}
+      }
+    },
+    event: 'shopify_localization_loaded'
+  });
+})();
+</script>
