@@ -13,7 +13,6 @@
         country: {{ localization.country.iso_code | json }},
         currency: {{ cart.currency.iso_code | default: shop.currency | json }},
         market_handle: {{ localization.market.handle | default: '' | json }},
-        market_id: {{ localization.market.id | default: '' | json }},
         request_locale_iso_code: {{ request.locale.iso_code | json }}
       }
     },
