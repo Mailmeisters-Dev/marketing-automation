@@ -73,8 +73,8 @@ async function postToKlaviyo(payload) {
 			accept: "application/vnd.api+json",
 			"content-type": "application/vnd.api+json",
 			revision: KLAVIYO_REVISION,
-			"X-Klaviyo-API-Source": "shopify-custom-pixel",
-			"X-Klaviyo-User-Agent": "mm-shopify-custom-pixel",
+			"X-MM-API-Source": "shopify-custom-pixel",
+			"X-MM-User-Agent": "mm-shopify-custom-pixel",
 		},
 		body: JSON.stringify(payload),
 	});
